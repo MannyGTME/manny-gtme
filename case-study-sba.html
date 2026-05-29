@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direct-to-Borrower Signal System — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-[720px] mx-auto px-6">
+    <main class="py-16 md:py-24">
+
+      <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Financial Services</p>
+      <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+        Direct-to-Borrower<br>Signal System
+      </h1>
+
+      <div class="mb-14" data-reveal>
+        <div class="section-label">The Problem</div>
+        <p class="mb-4">Most outbound systems are built around profile fit — who the prospect is. Industry, company size, role, revenue. That model works when the product is relevant to a type of buyer across all of time. It breaks down completely when the product only matters at a specific moment.</p>
+        <p>This system was built for a financial product where timing is the only variable that matters. The right company reached at the wrong moment will ignore the message. The same company reached at the right moment will reply within hours. The problem was identifying a reliable, publicly available proxy signal for that moment — and building the infrastructure to act on it at scale before the window closed.</p>
+      </div>
+
+      <div class="mb-14" data-reveal>
+        <div class="section-label">The Workflow</div>
+        <ol class="list-decimal list-outside ml-5 space-y-3">
+          <li>Signal identification: mapped the business event that reliably precedes the borrowing decision. This required working backward from conversion data to find which observable, external indicator correlated most tightly with product-market timing.</li>
+          <li>Data sourcing: identified the public database where this signal is recorded, assessed update frequency and data quality, and confirmed the signal could be pulled programmatically.</li>
+          <li>Ingestion pipeline: built a Clay table that ingested new signal records on a rolling basis, deduplicated against previously contacted accounts, and enriched each record with contact data and firmographic context.</li>
+          <li>Scoring model: weighted records by signal recency (score decays daily), signal strength, and negative filters that excluded accounts unlikely to convert based on size or structure.</li>
+          <li>Output: a prioritized send list, refreshed continuously, with a signal-matched email constructed for each record. Top-scored accounts entered sequence within 24 hours of the signal firing.</li>
+        </ol>
+      </div>
+
+      <div class="mb-14" data-reveal>
+        <div class="section-label">The Copy</div>
+        <p class="text-sub text-sm mb-4">Example output structure — signal-matched first touch:</p>
+        <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: [signal-referenced subject line — timing, not profile]
+
+Hi [First Name],
+
+[Single sentence referencing the specific timing signal — what
+happened recently that makes this message relevant right now,
+not six months ago.]
+
+[One sentence connecting that event to the product's core value.
+No feature list. One outcome.]
+
+[Low-friction CTA — a question, not a calendar link.]
+
+[Signature]
+
+---
+Note: Subject line and body are generated from modular components
+in Clay. Each module is written for a specific signal state.
+The system selects the right combination at send time.</code></pre>
+      </div>
+
+      <div class="mb-16" data-reveal>
+        <div class="section-label">The Metrics</div>
+        <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
+        <ul class="list-disc list-outside ml-5 space-y-2">
+          <li>Signal-to-reply rate by recency bucket (0–7 days, 8–14 days, 15–30 days) — this tells you the true action window.</li>
+          <li>Signal precision — what percentage of triggered accounts actually have the problem the product solves?</li>
+          <li>List refresh velocity — how many net-new accounts enter the system per week?</li>
+          <li>Time-to-contact — average hours between signal fire and first email sent.</li>
+        </ul>
+      </div>
+
+      <div class="border-t border-line pt-12 mb-8" data-reveal>
+        <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
+        <a href="contact.html" class="btn-primary">Let's talk →</a>
+      </div>
+
+      <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

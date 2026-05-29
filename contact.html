@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+    </div>
+  </nav>
+
+  <div class="max-w-[720px] mx-auto px-6">
+    <main class="py-16 md:py-24">
+
+      <h1 class="font-display font-bold text-primary mb-3 leading-tight" style="font-size: clamp(2.2rem, 6vw, 3.5rem);" data-reveal>
+        Let's build something.
+      </h1>
+
+      <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm mb-14" data-reveal>
+        <a href="mailto:mannygtme@gmail.com" class="text-accent link-hover">mannygtme@gmail.com</a>
+        <span class="text-sub">·</span>
+        <a href="https://linkedin.com/in/manfreda" class="text-accent link-hover">LinkedIn</a>
+      </div>
+
+      <!-- Form container -->
+      <div id="form-container" class="bg-surface border border-line p-7 md:p-10 max-w-2xl" data-reveal>
+
+        <!-- Progress bar -->
+        <div class="flex items-center gap-4 mb-8">
+          <span class="step-counter font-mono text-sub text-xs shrink-0">Step 1 of 4</span>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 25%;"></div>
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+
+          <!-- Step 1: Identity -->
+          <div class="form-step step-active" data-step="1">
+            <h2 class="font-display font-bold text-2xl text-primary mb-6">Who are you?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+              <input type="text" name="first_name" placeholder="First name" required class="form-input">
+              <input type="text" name="last_name" placeholder="Last name" required class="form-input">
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" placeholder="Work email" required class="form-input">
+            </div>
+            <div class="mb-8">
+              <input type="url" name="company_url" placeholder="Company URL (optional)" class="form-input">
+            </div>
+            <button type="button" data-next class="btn-primary">Next →</button>
+          </div>
+
+          <!-- Step 2: GTM Stack -->
+          <div class="form-step" data-step="2">
+            <h2 class="font-display font-bold text-2xl text-primary mb-6">What is your current GTM stack?</h2>
+            <div class="space-y-2 mb-8">
+              <label class="option-card">
+                <input type="checkbox" name="stack" value="apollo_zoominfo" class="sr-only">
+                Apollo / ZoomInfo
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="stack" value="clay_waterfall" class="sr-only">
+                Clay / Waterfall
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="stack" value="lemlist_smartlead" class="sr-only">
+                Lemlist / Smartlead
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="stack" value="salesforce_hubspot" class="sr-only">
+                Salesforce / HubSpot
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="stack" value="none_spreadsheets" class="sr-only">
+                None / Spreadsheets
+              </label>
+            </div>
+            <button type="button" data-next class="btn-primary">Next →</button>
+          </div>
+
+          <!-- Step 3: Friction -->
+          <div class="form-step" data-step="3">
+            <h2 class="font-display font-bold text-2xl text-primary mb-6">What is the primary friction point?</h2>
+            <div class="space-y-2 mb-8">
+              <label class="option-card">
+                <input type="radio" name="friction" value="personalization" class="sr-only">
+                Weak or manual personalization
+              </label>
+              <label class="option-card">
+                <input type="radio" name="friction" value="deliverability" class="sr-only">
+                Failing deliverability
+              </label>
+              <label class="option-card">
+                <input type="radio" name="friction" value="no_system" class="sr-only">
+                No automated system — SDR grunt work
+              </label>
+              <label class="option-card">
+                <input type="radio" name="friction" value="other" class="sr-only">
+                Other
+              </label>
+            </div>
+            <button type="button" data-next class="btn-primary">Next →</button>
+          </div>
+
+          <!-- Step 4: Timeline -->
+          <div class="form-step" data-step="4">
+            <h2 class="font-display font-bold text-2xl text-primary mb-6">Timeline to deploy?</h2>
+            <div class="space-y-2 mb-8">
+              <label class="option-card">
+                <input type="radio" name="timeline" value="immediately" class="sr-only">
+                Ready to build immediately
+              </label>
+              <label class="option-card">
+                <input type="radio" name="timeline" value="next_quarter" class="sr-only">
+                Exploring for next quarter
+              </label>
+              <label class="option-card">
+                <input type="radio" name="timeline" value="consulting" class="sr-only">
+                Just looking for consulting
+              </label>
+            </div>
+            <button type="submit" class="btn-primary block w-full text-center" style="padding: 13px 22px;">
+              Request Engine Build →
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Success state -->
+      <div
+        id="form-success"
+        class="py-20 text-center max-w-2xl"
+        style="display: none; opacity: 0; transform: translateY(16px); transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);"
+      >
+        <p class="font-mono text-sub text-xs tracking-widest uppercase mb-5">System Initialized</p>
+        <h2 class="font-display font-bold text-3xl text-primary mb-3">The data packet has been received.</h2>
+        <p class="text-sub">I will be in touch.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
