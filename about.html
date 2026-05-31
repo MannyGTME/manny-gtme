@@ -10,44 +10,68 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
       <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
 
-      <img
-        src="logoMGTM.png"
-        alt="Manny Antoine"
-        class="w-[72px] h-[72px] rounded-full object-cover mb-8"
-        style="object-position: center 15%; border: 1px solid #f0a500;"
-        data-reveal
-      >
+        <img
+          src="logoMGTM.PNG"
+          alt="Manny Antoine"
+          class="w-[72px] h-[72px] rounded-full object-cover mb-8"
+          style="object-position: center 15%; border: 1px solid #f0a500;"
+          data-reveal
+        >
 
-      <h1 class="font-display font-bold text-4xl text-primary mb-10" data-reveal>About</h1>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-none tracking-tighter text-center w-full mx-auto mb-5 text-white [text-shadow:_0_0_20px_rgba(255,255,255,0.5)]" data-reveal>Not Lists. Systems.</h1>
 
-      <div class="space-y-5 text-primary leading-relaxed mb-10">
-        <p data-reveal>About me content goes here.</p>
-        <p data-reveal>About me content goes here.</p>
-        <p data-reveal>About me content goes here.</p>
-        <p data-reveal>About me content goes here.</p>
+        <p class="text-primary leading-relaxed mb-2" data-reveal>
+          I spent years learning exactly why outbound campaigns fail: manual friction, bad data, and spray-and-pray execution to name a few. Now, I engineer signal-driven systems that eliminate the guesswork. I don&#8217;t scrape leads; I build the infrastructure that turns raw data into predictable revenue.
+        </p>
+
+        <div class="terminal-block" data-reveal>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-3 h-3 rounded-full bg-red-500 opacity-80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500 opacity-80"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500 opacity-80"></span>
+          </div>
+          <pre>{
+  "event": "funding_raised",
+  "company": "Target_Account",
+  "action": "trigger_enrichment",
+  "status": "pipeline_generated"
+}</pre>
+        </div>
+
+        <p class="text-primary leading-relaxed mt-10 mb-12" data-reveal>
+          Open to full-time GTM Engineer roles and select freelance work.
+          Reach me at <a href="mailto:mannygtme@gmail.com" class="text-accent link-hover">mannygtme@gmail.com</a>
+          or on <a href="https://linkedin.com/in/manfreda" class="text-accent link-hover">LinkedIn</a>.
+        </p>
+
+        <div data-reveal>
+          <a href="contact.html" class="btn-primary">Work With Me &#8594;</a>
+        </div>
+
+        <nav class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm text-sub mt-8 pt-6 border-t border-line" data-reveal>
+          <a href="case-studies.html" class="hover:text-accent transition-colors link-hover">Case Studies</a>
+          <span aria-hidden="true">·</span>
+          <a href="writing.html" class="hover:text-accent transition-colors link-hover">Writing</a>
+        </nav>
+
       </div>
-
-      <p class="text-primary leading-relaxed mb-12" data-reveal>
-        Open to full-time GTM Engineer roles and select freelance work.
-        Reach me at <a href="mailto:mannygtme@gmail.com" class="text-accent link-hover">mannygtme@gmail.com</a>
-        or on <a href="https://linkedin.com/in/manfreda" class="text-accent link-hover">LinkedIn</a>.
-      </p>
-
-      <div data-reveal>
-        <a href="contact.html" class="btn-primary">Work With Me →</a>
-      </div>
-
     </main>
   </div>
 

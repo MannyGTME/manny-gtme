@@ -10,44 +10,50 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
       <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
 
-      <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>GovTech SaaS</p>
-      <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
-        Signal-Based Outbound<br>Targeting System
-      </h1>
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>GovTech SaaS</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          Signal-Based Outbound<br>Targeting System
+        </h1>
 
-      <div class="mb-14" data-reveal>
-        <div class="section-label">The Problem</div>
-        <p class="mb-4">GovTech companies serve a narrow buyer — procurement leads, IT directors, and department heads inside government agencies and their contractors. The challenge isn't that the market is too small. It's that most of it is inactive at any given moment. A standard outbound motion that reaches everyone on the list at the same time wastes send volume, burns domain reputation, and produces flat results regardless of message quality.</p>
-        <p>The goal was to build a system that identifies which accounts are actually worth touching right now, ranks them by fit, and constructs a relevant first touch for each one without requiring a rep to do the research manually for every record.</p>
-      </div>
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p class="mb-4">GovTech companies serve a narrow buyer — procurement leads, IT directors, and department heads inside government agencies and their contractors. The challenge isn't that the market is too small. It's that most of it is inactive at any given moment. A standard outbound motion that reaches everyone on the list at the same time wastes send volume, burns domain reputation, and produces flat results regardless of message quality.</p>
+          <p>The goal was to build a system that identifies which accounts are actually worth touching right now, ranks them by fit, and constructs a relevant first touch for each one without requiring a rep to do the research manually for every record.</p>
+        </div>
 
-      <div class="mb-14" data-reveal>
-        <div class="section-label">The Workflow</div>
-        <ol class="list-decimal list-outside ml-5 space-y-3">
-          <li>Pulled the core account universe into Clay — roughly 400 companies that fit the ICP by industry, employee count, and revenue range.</li>
-          <li>Defined four scoring signals: recent leadership hire in IT or procurement, open headcount in relevant roles, recent contract award or renewal activity, and technology stack indicators suggesting a systems evaluation.</li>
-          <li>Built Clay enrichment columns for each signal, using a combination of LinkedIn data, job board data, and public contract databases. Each signal returned a binary score (1 or 0) per record.</li>
-          <li>Stacked the four signals into a composite score. Accounts scoring 3 or 4 entered the active sequence immediately. Scores of 2 went into a watch list. Scores of 0–1 were excluded until signals updated.</li>
-          <li>Built a modular email library — each signal mapped to a specific opening hook. Clay used the highest-scoring signal per account to select the right module, then Claude via API stitched the hook, a relevance mid-section, and a CTA into a single first touch.</li>
-          <li>Output: 50 accounts with a fully constructed, signal-matched email ready to send — no manual writing required per record.</li>
-        </ol>
-      </div>
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Workflow</div>
+          <ol class="list-decimal list-outside ml-5 space-y-3">
+            <li>Pulled the core account universe into Clay — roughly 400 companies that fit the ICP by industry, employee count, and revenue range.</li>
+            <li>Defined four scoring signals: recent leadership hire in IT or procurement, open headcount in relevant roles, recent contract award or renewal activity, and technology stack indicators suggesting a systems evaluation.</li>
+            <li>Built Clay enrichment columns for each signal, using a combination of LinkedIn data, job board data, and public contract databases. Each signal returned a binary score (1 or 0) per record.</li>
+            <li>Stacked the four signals into a composite score. Accounts scoring 3 or 4 entered the active sequence immediately. Scores of 2 went into a watch list. Scores of 0–1 were excluded until signals updated.</li>
+            <li>Built a modular email library — each signal mapped to a specific opening hook. Clay used the highest-scoring signal per account to select the right module, then Claude via API stitched the hook, a relevance mid-section, and a CTA into a single first touch.</li>
+            <li>Output: 50 accounts with a fully constructed, signal-matched email ready to send — no manual writing required per record.</li>
+          </ol>
+        </div>
 
-      <div class="mb-14" data-reveal>
-        <div class="section-label">The Copy</div>
-        <p class="text-sub text-sm mb-4">Example output — IT leadership hire signal module:</p>
-        <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: new Head of IT at [Company] → quick question
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Copy</div>
+          <p class="text-sub text-sm mb-4">Example output — IT leadership hire signal module:</p>
+          <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: new Head of IT at [Company] → quick question
 
 Hi [First Name],
 
@@ -61,27 +67,27 @@ a fragmented account list. I can show you how [Product] handles
 Worth a look?
 
 [Signature]</code></pre>
+        </div>
+
+        <div class="mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>Signal-to-reply rate — do accounts scoring 3–4 reply at a meaningfully higher rate than lower-scored accounts?</li>
+            <li>Module performance — which of the four signal hooks generates the most positive responses?</li>
+            <li>List decay rate — how many accounts move from inactive to active week-over-week as signals update?</li>
+            <li>Time-to-send — average time from signal fire to email sent, as a measure of system responsiveness.</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
+
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
       </div>
-
-      <div class="mb-16" data-reveal>
-        <div class="section-label">The Metrics</div>
-        <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
-        <ul class="list-disc list-outside ml-5 space-y-2">
-          <li>Signal-to-reply rate — do accounts scoring 3–4 reply at a meaningfully higher rate than lower-scored accounts?</li>
-          <li>Module performance — which of the four signal hooks generates the most positive responses?</li>
-          <li>List decay rate — how many accounts move from inactive to active week-over-week as signals update?</li>
-          <li>Time-to-send — average time from signal fire to email sent, as a measure of system responsiveness.</li>
-        </ul>
-      </div>
-
-      <!-- Conversion CTA -->
-      <div class="border-t border-line pt-12 mb-8" data-reveal>
-        <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
-        <a href="contact.html" class="btn-primary">Let's talk →</a>
-      </div>
-
-      <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
-
     </main>
   </div>
 

@@ -10,32 +10,47 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
       <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
 
-      <h1 class="font-display font-bold text-4xl text-primary mb-12" data-reveal>Writing</h1>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-none tracking-tighter text-center w-full mx-auto mb-5 text-white [text-shadow:_0_0_20px_rgba(255,255,255,0.5)]" data-reveal>Writing</h1>
 
-      <div class="border-t border-line">
-        <a href="writing-outbound-error.html" class="row-entry group px-2" data-reveal>
-          <div class="flex items-start gap-5">
-            <span class="font-mono text-sub text-xs pt-1 shrink-0 w-6">01</span>
-            <div class="flex-1 min-w-0">
-              <h2 class="font-display font-bold text-primary text-xl mb-2 group-hover:text-accent transition-colors">Why Error Handling in Outbound Matters More Than the AI</h2>
-              <p class="text-sub text-sm leading-relaxed">Most teams obsess over the AI prompt. The real failure mode is what happens when the data is missing, the enrichment times out, or the signal fires on a bad record.</p>
+        <div class="border-t border-line">
+          <a href="writing-outbound-error.html" class="row-entry group px-2" data-reveal>
+            <div class="flex items-start gap-5">
+              <span class="font-mono text-sub text-xs pt-1 shrink-0 w-6">01</span>
+              <div class="flex-1 min-w-0">
+                <h2 class="font-display font-bold text-primary text-xl mb-2 group-hover:text-accent transition-colors">Why Error Handling in Outbound Matters More Than the AI</h2>
+                <p class="text-sub text-sm leading-relaxed">Most teams obsess over the AI prompt. The real failure mode is what happens when the data is missing, the enrichment times out, or the signal fires on a bad record.</p>
+              </div>
+              <span class="text-sub group-hover:text-accent transition-colors shrink-0 pt-1 md:opacity-0 md:group-hover:opacity-100 md:transition-all">→</span>
             </div>
-            <span class="text-sub group-hover:text-accent transition-colors shrink-0 pt-1 md:opacity-0 md:group-hover:opacity-100 md:transition-all">→</span>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
+
+
+        <nav class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm text-sub mt-8 pt-6 border-t border-line" data-reveal>
+          <a href="case-studies.html" class="hover:text-accent transition-colors link-hover">Case Studies</a>
+          <span aria-hidden="true">·</span>
+          <a href="about.html" class="hover:text-accent transition-colors link-hover">About</a>
+        </nav>
+
+      </div>
     </main>
   </div>
 

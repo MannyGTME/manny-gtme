@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency SDR Hiring Campaign — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-6 pt-20">
+    <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
+
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Marketing Agency</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          Agency SDR<br>Hiring Campaign
+        </h1>
+
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p class="mb-4">Marketing agencies at the 10–50 headcount stage tend to grow entirely on referrals and inbound. Outbound is something they know they need but haven't formalized — until the referral pipeline slows, a key client churns, or a new service line needs to prove itself. The problem isn't that they don't want pipeline. It's that they haven't built the capacity to generate it.</p>
+          <p>The challenge was identifying which agencies were at that exact inflection point — not just a matching firmographic profile, but showing observable signals that commercial capacity was actively being built. The target was marketing agencies that were hiring for growth functions, expanding headcount, or launching new service lines: the three indicators that reliably precede a structured outbound motion.</p>
+        </div>
+
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Workflow</div>
+          <ol class="list-decimal list-outside ml-5 space-y-3">
+            <li>Built the core account universe in Clay — marketing agencies filtered by headcount range (8–50), service focus (performance, paid acquisition, demand gen, content), and geography. Starting list: ~600 accounts.</li>
+            <li>Defined three scoring signals: net new hires in the last 60 days across any function, open roles in Sales, Business Development, or Growth, and a leadership hire in a commercial or client-facing function within the last 90 days.</li>
+            <li>Enriched each record against LinkedIn for headcount velocity and hire data; pulled open role data from job board feeds via Clay. Scraped agency websites to identify current service lines and client verticals.</li>
+            <li>Built a composite score across three dimensions: headcount growth velocity (0–3), active role signal (0–2), and service-line fit with the offer (0–1). Agencies scoring 4 or above entered the active sequence. Scores of 2–3 went into a lower-priority watch cadence.</li>
+            <li>For each priority account, passed the top-scoring signal, agency context, and service-line data to Claude. The system selected the correct opening hook module and assembled a first touch referencing the specific signal — hire name, role title, or new service line — without manual lookup per record.</li>
+            <li>Output: a weekly rolling send list of 30–50 prioritized agencies, refreshed as new signals fired. No static list — accounts aged out as signals became stale and new ones replaced them.</li>
+          </ol>
+        </div>
+
+        <div class="mb-14" data-reveal>
+          <div class="section-label">The Copy</div>
+          <p class="text-sub text-sm mb-4">Example output — headcount growth + open BizDev role signal:</p>
+          <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: 3 new hires at [Agency] → quick question
+
+Hi [First Name],
+
+Noticed [Agency] has been building fast — and you have a BizDev role
+open right now. That combination usually means outbound is becoming
+part of the motion, not just referrals.
+
+Most agencies at your stage hit the same wall: how to run a structured
+pipeline without a full SDR headcount.
+
+Happy to show you how we handle that for agencies your size.
+15 minutes this week?
+
+[Signature]</code></pre>
+        </div>
+
+        <div class="mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>Signal accuracy — what percentage of triggered accounts are actively building outbound capacity at time of contact?</li>
+            <li>Score-to-meeting rate — do agencies scoring 5–6 convert at meaningfully higher rates than those scoring 3–4?</li>
+            <li>Role-signal lift — does an open BizDev or Sales role improve meeting rate over headcount growth alone?</li>
+            <li>Signal recency decay — how does reply rate change as the triggering signal ages from 0–2 weeks to 4–8 weeks?</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
+
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

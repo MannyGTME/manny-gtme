@@ -10,16 +10,22 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
       <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
 
       <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Financial Services</p>
       <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
@@ -83,8 +89,9 @@ The system selects the right combination at send time.</code></pre>
         <a href="contact.html" class="btn-primary">Let's talk →</a>
       </div>
 
-      <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
 
+      </div>
     </main>
   </div>
 

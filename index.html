@@ -8,49 +8,73 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dist/output.css">
+  <style>
+    .neon-stroke {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
+    }
+    @keyframes textFlicker {
+      0%   { opacity: 0; text-shadow: none; }
+      10%  { opacity: 1; text-shadow: 0 0 50px rgba(240, 165, 0, 1); }
+      15%  { opacity: 0; text-shadow: none; }
+      25%  { opacity: 1; text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+      35%  { opacity: 0.1; text-shadow: none; }
+      45%  { opacity: 1; text-shadow: 0 0 60px rgba(240, 165, 0, 1); }
+      55%  { opacity: 0; }
+      100% { opacity: 1; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(240, 165, 0, 0.3); }
+    }
+    .animate-flicker {
+      animation: textFlicker 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+  </style>
 </head>
 <body class="font-sans text-primary antialiased min-h-screen flex flex-col">
-
-  <div class="max-w-[720px] w-full mx-auto px-6 pt-6 flex justify-end">
-    <a href="contact.html" class="btn-primary" data-load>Work With Me →</a>
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
   </div>
 
-  <main class="flex-1 flex flex-col justify-center max-w-[720px] w-full mx-auto px-6 py-12">
+  <main class="flex-1 flex items-center justify-center px-6 py-12">
+    <div class="glass-card p-10 md:p-14 w-full max-w-2xl flex flex-col items-center justify-center text-center overflow-hidden">
 
-    <img
-      src="logoMGTM.png"
-      alt="Manny Antoine"
-      class="w-16 h-16 rounded-full object-cover mb-7"
-      style="object-position: center 15%; border: 1px solid #f0a500;"
-      data-load
-    >
+      <img
+        src="logoMGTM.PNG"
+        alt="Manny Antoine"
+        class="w-20 h-20 rounded-full object-cover mx-auto mb-8"
+        style="object-position: center 15%; border: 1px solid #f0a500;"
+        data-load
+      >
 
-    <h1 class="hero-name" data-load>Manny Antoine</h1>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-none tracking-tighter text-center w-full mx-auto mb-5 neon-stroke animate-flicker" data-load>MannyGTME</h1>
 
-    <p class="text-sub text-lg mb-10 max-w-md leading-relaxed" data-load>
-      B2B SDR turned GTM Engineer. I build outbound systems in Clay, Claude Code, and the rest of the stack.
-    </p>
+      <div class="flex flex-col items-center justify-center text-center mt-6 mb-8 w-full" data-load>
+        <p class="text-gray-400 text-lg sm:text-xl mb-2">
+          Most teams throw headcount at a revenue problem.
+        </p>
+        <p class="text-white text-lg sm:text-xl font-medium" style="text-shadow: 0 0 20px rgba(240, 165, 0, 0.7), 0 0 40px rgba(240, 165, 0, 0.3);">
+          I build systems that actually scale.
+        </p>
+      </div>
 
-    <div class="mb-6" data-load>
-      <a href="contact.html" class="btn-primary" style="font-size: 0.9rem; padding: 11px 22px;">Work With Me →</a>
+      <div class="flex justify-center w-full mb-8" data-load>
+        <a href="contact.html" class="btn-primary btn-glow" style="font-size: 0.9rem; padding: 11px 22px;">Work With Me →</a>
+      </div>
+
+      <nav class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm text-sub" data-load>
+        <a href="case-studies.html" class="hover:text-accent transition-colors link-hover">Case Studies</a>
+        <span aria-hidden="true">·</span>
+        <a href="writing.html" class="hover:text-accent transition-colors link-hover">Writing</a>
+        <span aria-hidden="true">·</span>
+        <a href="about.html" class="hover:text-accent transition-colors link-hover">About</a>
+      </nav>
+
     </div>
-
-    <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-sub" data-load>
-      <a href="case-studies.html" class="hover:text-accent transition-colors link-hover">Case Studies</a>
-      <span aria-hidden="true">·</span>
-      <a href="writing.html" class="hover:text-accent transition-colors link-hover">Writing</a>
-      <span aria-hidden="true">·</span>
-      <a href="about.html" class="hover:text-accent transition-colors link-hover">About</a>
-    </nav>
-
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p class="text-sub text-sm">
-        Manny Antoine · 2026 ·
-        <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a>
-      </p>
+      <p class="text-sub text-sm text-center">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
     </div>
   </footer>
 

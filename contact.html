@@ -10,14 +10,20 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
 
       <h1 class="font-display font-bold text-primary mb-3 leading-tight" style="font-size: clamp(2.2rem, 6vw, 3.5rem);" data-reveal>
@@ -30,8 +36,8 @@
         <a href="https://linkedin.com/in/manfreda" class="text-accent link-hover">LinkedIn</a>
       </div>
 
-      <!-- Form container -->
-      <div id="form-container" class="bg-surface border border-line p-7 md:p-10 max-w-2xl" data-reveal>
+      <!-- Form container — glass-card wrapper -->
+      <div id="form-container" class="glass-card p-7 md:p-10 max-w-2xl" data-reveal>
 
         <!-- Progress bar -->
         <div class="flex items-center gap-4 mb-8">

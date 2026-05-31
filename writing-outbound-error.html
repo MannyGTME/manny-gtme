@@ -10,34 +10,63 @@
   <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="text-sub text-sm link-hover hover:text-accent transition-colors">Manny Antoine</a>
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
       <a href="contact.html" class="btn-primary">Work With Me →</a>
     </div>
   </nav>
 
-  <div class="max-w-[720px] mx-auto px-6">
+  <div class="max-w-3xl mx-auto px-6 pt-20">
     <main class="py-16 md:py-24">
+      <div class="glass-card p-8 md:p-12">
 
-      <h1 class="font-display font-bold text-primary leading-tight mb-12" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
-        Why Error Handling in Outbound<br>Matters More Than the AI
-      </h1>
+        <h1 class="font-display font-bold text-primary leading-tight mb-12" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          Why Error Handling in Outbound<br>Matters More Than the AI
+        </h1>
 
-      <div class="space-y-5 text-primary leading-relaxed mb-16">
-        <p data-reveal>Post body content goes here. Replace this placeholder with the full article text.</p>
-        <p data-reveal>Post body content goes here. Replace this placeholder with the full article text.</p>
-        <p data-reveal>Post body content goes here. Replace this placeholder with the full article text.</p>
+        <div class="space-y-5 text-primary leading-relaxed mb-16">
+          <p data-reveal>Most outbound builders spend the majority of their time refining the AI prompt. Getting the tone right. Adjusting the opening hook. Running A/B tests on subject lines. All of that matters. But in practice, the prompt is rarely what breaks the system at scale.</p>
+
+          <p data-reveal>What breaks it is everything upstream. Missing first names. Enrichment columns that returned null because LinkedIn throttled the request. A signal that fired on a record that had been misclassified two steps earlier. A company URL that resolved to a holding page, so the website scrape came back empty, so the AI invented a plausible-sounding sentence about a product they don't sell. The email went out anyway.</p>
+
+          <p data-reveal>This is the part most people don't build. They wire up Clay, connect Claude, and assume that if the enrichment ran, the data is usable. It often isn't. And a system with no error handling doesn't fail loudly — it fails quietly, producing output that looks correct until a prospect replies to ask why you referenced the wrong company.</p>
+
+          <div class="section-label mt-10 mb-4" data-reveal>The failure modes</div>
+
+          <p data-reveal>There are three categories of failure that account for nearly all silent breakdowns in AI outbound systems.</p>
+
+          <p data-reveal>The first is <strong class="text-white font-medium">missing required fields</strong>. First name is the obvious one, but it's rarely the only one. If your personalization relies on a job title, a company size, a funding round, or a specific signal column, every one of those is a potential null. A well-designed system has a fallback for each: a generic alternative that degrades gracefully instead of producing a broken output. Most systems don't have this. They were built assuming the data would always be there.</p>
+
+          <p data-reveal>The second is <strong class="text-white font-medium">enrichment failure</strong>. Clay columns time out. APIs rate-limit. A LinkedIn scrape runs on a company with a malformed profile and returns a partial result that passes validation but contains garbage. The record enriches, the status column shows green, and the downstream AI prompt receives context that's wrong. The model doesn't know it's wrong — it uses what it's given. This is where hallucinations that look like real personalization come from.</p>
+
+          <p data-reveal>The third is <strong class="text-white font-medium">signal misfires</strong>. Signals are rarely clean. A "recent funding" filter might catch a grant, an extension round, or a convertible note that doesn't represent the lifecycle event you're targeting. A "leadership hire" signal might fire on an internal promotion rather than an external hire, making the hook sound presumptuous. A headcount growth signal might trigger on a company that acquired a small team, not one that's organically scaling. Without a validation layer, these misfires produce outreach that's technically personalized but substantively irrelevant.</p>
+
+          <div class="section-label mt-10 mb-4" data-reveal>How to build around it</div>
+
+          <p data-reveal>The fix isn't complicated, but it requires treating error handling as a first-class part of the build, not an afterthought. Before the AI prompt runs, every required input should be checked for presence and plausibility. If a field is missing, the record should either use a safe fallback or be held from the sequence entirely — not processed with a blank.</p>
+
+          <p data-reveal>Enrichment columns should have explicit null-handling logic. If the column returns empty, a separate flag column should mark the record as incomplete. The send-list formula should exclude any record with an incomplete flag. Records held this way feed into a re-enrichment queue that retries on the next run. Nothing sent with bad data.</p>
+
+          <p data-reveal>Signal validation is the most manual part, but also the highest-leverage. The best approach is to run a sample of 20–30 triggered records by hand before the first send, checking whether the signal that fired actually represents the condition you're targeting. This is how you catch the structural misfires — the ones that look like data but aren't — before they reach a prospect's inbox at volume.</p>
+
+          <p data-reveal>The systems that produce the highest reply rates aren't always the ones with the most sophisticated AI. They're the ones where the data going into the AI is clean, complete, and signal-accurate. The prompt can only work with what you give it. Error handling is what determines the quality of that input.</p>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Enjoyed this? Let's talk about your outbound stack.</p>
+          <a href="contact.html" class="btn-primary">Work With Me →</a>
+        </div>
+
+        <a href="writing.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Writing</a>
+
       </div>
-
-      <div class="border-t border-line pt-12 mb-8" data-reveal>
-        <p class="text-sub text-sm mb-4">Enjoyed this? Let's talk about your outbound stack.</p>
-        <a href="contact.html" class="btn-primary">Work With Me →</a>
-      </div>
-
-      <a href="writing.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Writing</a>
-
     </main>
   </div>
 
