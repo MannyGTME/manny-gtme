@@ -24,21 +24,21 @@
   </nav>
 
   <div class="max-w-3xl mx-auto px-6 pt-20">
-    <main class="py-16 md:py-24">
-      <div class="glass-card p-8 md:p-12">
+    <main class="py-10 md:py-24">
+      <div class="glass-card p-6 sm:p-8 md:p-12">
 
       <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Financial Services</p>
       <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
         Direct-to-Borrower<br>Signal System
       </h1>
 
-      <div class="mb-14" data-reveal>
+      <div class="mb-10 md:mb-14" data-reveal>
         <div class="section-label">The Problem</div>
         <p class="mb-4">Most outbound systems are built around profile fit — who the prospect is. Industry, company size, role, revenue. That model works when the product is relevant to a type of buyer across all of time. It breaks down completely when the product only matters at a specific moment.</p>
         <p>This system was built for a financial product where timing is the only variable that matters. The right company reached at the wrong moment will ignore the message. The same company reached at the right moment will reply within hours. The problem was identifying a reliable, publicly available proxy signal for that moment — and building the infrastructure to act on it at scale before the window closed.</p>
       </div>
 
-      <div class="mb-14" data-reveal>
+      <div class="mb-10 md:mb-14" data-reveal>
         <div class="section-label">The Workflow</div>
         <ol class="list-decimal list-outside ml-5 space-y-3">
           <li>Signal identification: mapped the business event that reliably precedes the borrowing decision. This required working backward from conversion data to find which observable, external indicator correlated most tightly with product-market timing.</li>
@@ -49,10 +49,10 @@
         </ol>
       </div>
 
-      <div class="mb-14" data-reveal>
+      <div class="mb-10 md:mb-14" data-reveal>
         <div class="section-label">The Copy</div>
         <p class="text-sub text-sm mb-4">Example output structure — signal-matched first touch:</p>
-        <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: [signal-referenced subject line — timing, not profile]
+        <pre class="bg-surface font-mono text-xs sm:text-sm px-4 py-4 sm:px-5 sm:py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: [signal-referenced subject line — timing, not profile]
 
 Hi [First Name],
 
@@ -73,7 +73,7 @@ in Clay. Each module is written for a specific signal state.
 The system selects the right combination at send time.</code></pre>
       </div>
 
-      <div class="mb-16" data-reveal>
+      <div class="mb-12 md:mb-16" data-reveal>
         <div class="section-label">The Metrics</div>
         <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
         <ul class="list-disc list-outside ml-5 space-y-2">

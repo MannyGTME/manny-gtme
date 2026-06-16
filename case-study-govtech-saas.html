@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GovTech SaaS Outbound — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-6 pt-20">
+    <main class="py-10 md:py-24">
+      <div class="glass-card p-6 sm:p-8 md:p-12">
+
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>GovTech SaaS</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          GovTech SaaS<br>Outbound
+        </h1>
+
+        <div class="mb-14 space-y-4" data-reveal>
+          <p>I built an outbound system for a company selling sales intelligence software into the government tech space. The goal was simple: find the right accounts, score them, and write the outreach without a human doing research on every record.</p>
+
+          <p>I pulled 50 companies and scored each one on four signals: funding stage, growth, public sector fit, and what sales tools they already ran. Each company got a score out of 15. The enrichment ran through a waterfall, so if one source came back empty it tried the next instead of just failing. 46 of the 50 decision-makers came back fully enriched.</p>
+
+          <p>The email writing was split into pieces. The opener pulled from the person, the body pulled from the company, the subject line was its own thing. I capped every email under 100 words because that's where reply rates hold up.</p>
+
+          <p>The part I care most about is the guardrails. A status check stops the AI from running on a record with missing data, and a second check makes sure no half-built email reaches the sequencer. If the data is bad, the record gets held, not sent.</p>
+
+          <p>One thing that came out of the scoring: 80% of the top accounts were already running ZoomInfo or Salesforce. That told me they had budget for sales tooling and shaped how I would position against what they already used.</p>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want this built for your pipeline?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
+
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

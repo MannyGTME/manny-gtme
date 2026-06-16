@@ -275,6 +275,15 @@
   padding: 24px 24px 36px;
 }
 
+/* ─── Mobile overrides ─────────────────────────────────── */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .site-footer { margin-top: 48px; }
+  .row-entry { padding: 14px 0; min-height: 48px; }
+  .section-label { margin-bottom: 14px; }
+  .terminal-block { margin-top: 1rem; font-size: 0.7rem; }
+}
+
 /* ─── Flicker animation ───────────────────────────────── */
 @keyframes textFlicker {
   0%   { opacity: 0; text-shadow: none; }

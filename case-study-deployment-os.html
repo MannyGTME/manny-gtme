@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing — Manny Antoine</title>
+  <title>Deployment OS — Manny Antoine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -27,28 +27,34 @@
     <main class="py-10 md:py-24">
       <div class="glass-card p-6 sm:p-8 md:p-12">
 
-        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-none tracking-tighter text-center w-full mx-auto mb-5 text-white [text-shadow:_0_0_20px_rgba(255,255,255,0.5)]" data-reveal>Writing</h1>
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Live System</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          Deployment OS
+        </h1>
 
-        <div class="border-t border-line">
-          <a href="writing-outbound-error.html" class="row-entry group px-2" data-reveal>
-            <div class="flex items-start gap-5">
-              <span class="font-mono text-sub text-xs pt-1 shrink-0 w-6">01</span>
-              <div class="flex-1 min-w-0">
-                <h2 class="font-display font-bold text-primary text-xl mb-2 group-hover:text-accent transition-colors">Why Error Handling in Outbound Matters More Than the AI</h2>
-                <p class="text-sub text-sm leading-relaxed">Most teams obsess over the AI prompt. The real failure mode is what happens when the data is missing, the enrichment times out, or the signal fires on a bad record.</p>
-              </div>
-              <span class="text-sub group-hover:text-accent transition-colors shrink-0 pt-1 md:opacity-0 md:group-hover:opacity-100 md:transition-all">→</span>
-            </div>
-          </a>
+        <div class="mb-14 space-y-4" data-reveal>
+          <p>Deployment OS is a live signal router I built for targeting outbound agencies. When an agency posts a revenue role, a webhook catches it. The system scores the account on a weighted model, then routes it by tier: Tier 1, Standard, or Killed. High scorers move forward, the rest get held or dropped.</p>
+
+          <p>Webhook catches the signal, scores it, routes it by tier, and fires a webhook to the CRM. A live dashboard shows every signal that comes in.</p>
+
+          <p>I went from an empty folder to live cloud infrastructure in under 3 hours.</p>
         </div>
 
+        <div class="terminal-block mb-14" data-reveal>
+          <div class="flex items-center gap-1.5 mb-3">
+            <span class="w-3 h-3 rounded-full bg-red-500 opacity-80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500 opacity-80"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500 opacity-80"></span>
+          </div>
+          <pre>Stack: Next.js · Supabase · webhook ingestion · real-time dashboard</pre>
+        </div>
 
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want this built for your pipeline?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
 
-        <nav class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-sm text-sub mt-8 pt-6 border-t border-line" data-reveal>
-          <a href="case-studies.html" class="hover:text-accent transition-colors link-hover">Case Studies</a>
-          <span aria-hidden="true">·</span>
-          <a href="about.html" class="hover:text-accent transition-colors link-hover">About</a>
-        </nav>
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
 
       </div>
     </main>
