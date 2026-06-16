@@ -28,29 +28,61 @@
       <div class="glass-card p-6 sm:p-8 md:p-12">
 
         <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Live System</p>
-        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+        <h1 class="font-display font-bold text-primary leading-tight mb-10 md:mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
           Deployment OS
         </h1>
 
-        <div class="mb-14 space-y-4" data-reveal>
-          <p>Deployment OS is a live signal router I built for targeting outbound agencies. When an agency posts a revenue role, a webhook catches it. The system scores the account on a weighted model, then routes it by tier: Tier 1, Standard, or Killed. High scorers move forward, the rest get held or dropped.</p>
-
-          <p>Webhook catches the signal, scores it, routes it by tier, and fires a webhook to the CRM. A live dashboard shows every signal that comes in.</p>
-
-          <p>I went from an empty folder to live cloud infrastructure in under 3 hours.</p>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p class="mb-4">Outbound agencies live or die on signal-to-action speed. A buying signal fires — an agency posts a revenue role, a company expands a team — and the window to act is short. Most teams catch these signals manually, in a spreadsheet, days late, if at all. By the time a human notices and routes it, the moment has cooled.</p>
+          <p>The harder problem isn't catching one signal. It's building infrastructure that catches every signal, scores it consistently, and routes it to the right action automatically — so the team's attention only goes where it matters, and nothing slips because someone was busy.</p>
         </div>
 
-        <div class="terminal-block mb-14" data-reveal>
-          <div class="flex items-center gap-1.5 mb-3">
-            <span class="w-3 h-3 rounded-full bg-red-500 opacity-80"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500 opacity-80"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500 opacity-80"></span>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">Deployment OS is a live signal-routing platform. It runs on a head → spine → tail architecture:</p>
+          <ul class="list-disc list-outside ml-5 space-y-3 mb-8">
+            <li><strong class="text-white font-medium">Head (ingestion):</strong> A configurable source that detects signals and fires them into the system. In the demo it's a manual trigger; in production it's an automated poller or feed.</li>
+            <li><strong class="text-white font-medium">Spine (the brain):</strong> A Next.js / Supabase / Vercel service that receives each signal via authenticated webhook, scores it on a weighted model, and writes it to a database with a real-time dashboard. The scoring model weighs multiple signal dimensions and assigns a tier.</li>
+            <li><strong class="text-white font-medium">Tail (routing):</strong> Based on tier, the system routes automatically — Tier 1 fires to the sequencer, Standard goes to a nurture queue, Killed is archived.</li>
+          </ul>
+          <p class="mb-8">The whole thing is tool-agnostic by design: the final POST can point at Smartlead, Lemlist, HubSpot, or any endpoint — swap the target, the logic is unchanged.</p>
+
+          <div class="space-y-6">
+            <figure data-reveal>
+              <img src="CommandOS.png" alt="Deployment OS Command Center — live dashboard showing signal routing in action" class="w-full rounded-lg border border-line">
+              <figcaption class="text-sub text-xs mt-2 leading-relaxed">Command Center: 9 total signals caught, system health ONLINE, routing matrix showing live scored agencies (Tier 1 at 13/15, Killed at 3/15).</figcaption>
+            </figure>
+            <figure data-reveal>
+              <img src="n8n.png" alt="n8n head workflow: Fire Signal to POST to Spine Webhook" class="w-full rounded-lg border border-line">
+              <figcaption class="text-sub text-xs mt-2 leading-relaxed">Head workflow: Fire Signal → Tier 1 Demo Payload → POST to Spine Webhook.</figcaption>
+            </figure>
+            <figure data-reveal>
+              <img src="n8n2.png" alt="n8n tail workflow: Routing Gate splitting by tier into downstream actions" class="w-full rounded-lg border border-line">
+              <figcaption class="text-sub text-xs mt-2 leading-relaxed">Tail workflow: Routing Gate splitting Tier 1 / Standard / Killed into three downstream actions — sequencer, HubSpot nurture, or archive.</figcaption>
+            </figure>
           </div>
-          <pre>Stack: Next.js · Supabase · webhook ingestion · real-time dashboard</pre>
+        </div>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Architecture</div>
+          <p class="mb-4">Signal in → scored on a weighted model → tiered → routed by tier → action fired, with a real-time dashboard showing every signal as it lands. Deterministic, auditable, and built so the team only touches the deals worth touching.</p>
+          <p>Built greenfield to live cloud infrastructure in a single focused build session. The speed isn't the point — the point is that it's real, deployed, and runs end to end. The orchestration on both ends was built with n8n; the scoring spine is custom.</p>
+        </div>
+
+        <div class="mb-12 md:mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>Signal-to-action latency — from signal fired to action taken, measured in minutes not days.</li>
+            <li>Tier accuracy — do Tier 1 accounts convert at meaningfully higher rates than Standard, validating the scoring model?</li>
+            <li>Coverage — percentage of relevant signals caught and routed vs. missed.</li>
+            <li>Analyst time saved — hours of manual signal triage removed from the team's week.</li>
+          </ul>
         </div>
 
         <div class="border-t border-line pt-12 mb-8" data-reveal>
-          <p class="text-sub text-sm mb-4">Want this built for your pipeline?</p>
+          <p class="text-sub text-sm mb-4">Want a signal-routing system for your pipeline?</p>
           <a href="contact.html" class="btn-primary">Let's talk →</a>
         </div>
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScopeGuard — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-6 pt-20">
+    <main class="py-10 md:py-24">
+      <div class="glass-card p-6 sm:p-8 md:p-12">
+
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Live System</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-10 md:mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          ScopeGuard
+        </h1>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p class="mb-4">Most GTM systems focus on getting the deal. Almost nothing protects what happens after the deal closes. Sales promises something to win the deal; delivery inherits those promises and discovers the over-commitments in month two — the timeline that was never realistic, the integration that doesn't exist, the volume the team can't support. By then it's a fire, and the client relationship takes the hit.</p>
+          <p>The challenge: catch over-promised deals at the moment they close — before kickoff — without flagging every ambitious-but-doable deal and drowning the team in false alarms.</p>
+        </div>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">ScopeGuard is a post-sales validation layer, built on the same platform as Deployment OS. When a deal closes, it:</p>
+          <ol class="list-decimal list-outside ml-5 space-y-3 mb-8">
+            <li>Takes what sales committed to — deal notes, or in production, the call transcript.</li>
+            <li>Diffs every commitment against an operational constraints file: the delivery team's actual envelope — real timelines, real volume ramps, which integrations exist vs. which are roadmap, real support SLAs.</li>
+            <li>Classifies each commitment as <strong class="text-white font-medium">SAFE</strong> (inside the envelope), <strong class="text-white font-medium">STRETCH</strong> (doable but tight — noted, not escalated), or <strong class="text-white font-medium">VIOLATION</strong> (outside the envelope).</li>
+            <li>Scores delivery risk 1–10 and routes: clean deals auto-clear, risky deals escalate to the delivery team with flagged risks and a suggested intervention — before kickoff.</li>
+          </ol>
+
+          <!-- HERO IMAGE -->
+          <!-- NOTE: Before publishing publicly, clear the duplicate "Velocity Partners" row in ScopeGuardOS.png (rename one client) so the queue shows distinct entries. -->
+          <figure data-reveal>
+            <img src="ScopeGuardOS.png" alt="ScopeGuard live onboarding queue showing three-tier routing in action" class="w-full rounded-lg border border-line">
+            <figcaption class="text-sub text-xs mt-2 leading-relaxed">Live onboarding queue: Velocity Partners 1/10 Escalated (4 flagged risks), Apex Healthcare 9/10 Clear (0 risks), Nimbus Logistics 4/10 Escalated (3 risks). Doable deals clear automatically; over-committed deals surface before kickoff.</figcaption>
+          </figure>
+        </div>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Principle</div>
+          <p class="mb-4">The system doesn't decide what's deliverable — operations writes the envelope once, and the system enforces it on every deal. Doable promises sail through untouched. Only genuine over-commitments get flagged.</p>
+          <p>A system that cries wolf gets ignored in a month. This one only pulls human attention to the deals that actually need it.</p>
+        </div>
+
+        <div class="mb-12 md:mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>Pre-kickoff catch rate — over-promised deals caught before delivery starts vs. discovered in month two.</li>
+            <li>Alert precision — percentage of escalations that are genuine risks (low false-positive rate).</li>
+            <li>Time-to-intervention — from deal close to delivery team awareness, in minutes.</li>
+            <li>Relationship saves — deals where early intervention reset expectations before they became churn.</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want to stop over-promised deals before kickoff?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
+
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

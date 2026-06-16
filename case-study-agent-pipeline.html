@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Agent Pipeline — Manny Antoine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="font-sans text-primary antialiased">
+  <!-- Ambient light sources -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index:-1" aria-hidden="true">
+    <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full bg-[#f0a500] opacity-[0.03] blur-[120px]"></div>
+    <div class="absolute -bottom-40 -right-20 w-[600px] h-[600px] rounded-full bg-white opacity-[0.02] blur-[150px]"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 px-6 py-4">
+    <div class="flex justify-between items-center max-w-3xl mx-auto">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Hub</a>
+      <a href="contact.html" class="btn-primary">Work With Me →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-6 pt-20">
+    <main class="py-10 md:py-24">
+      <div class="glass-card p-6 sm:p-8 md:p-12">
+
+        <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Live System</p>
+        <h1 class="font-display font-bold text-primary leading-tight mb-10 md:mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+          Autonomous Agent<br>Pipeline
+        </h1>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p class="mb-4">Deployment OS proved the spine: catch a signal, score it, route it. But the head and tail were still partly manual — something had to feed the signals in, and something had to act on the output. The next problem was closing that loop: building the layer that runs the full outbound motion end to end, with no human in the pipe until a draft is ready for review.</p>
+          <p>The risk with autonomous systems is obvious — an agent that can act without oversight can also do damage at scale. So the real challenge wasn't building agents that work. It was building agents that are safe: restartable, auditable, and structurally incapable of doing the wrong thing.</p>
+        </div>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">A pipeline of focused agents, each doing exactly one job, coordinating only through a shared database. No agent talks to another agent directly — they read rows in one status, do their work, and write rows in the next status. The database is the assembly line; the agents are the stations.</p>
+          <ul class="list-disc list-outside ml-5 space-y-4">
+            <li>
+              <strong class="text-white font-medium">Scout</strong> — detects hiring signals from public ATS job-board APIs. Config-driven (swap a config to target a different ICP), multi-source (Greenhouse, Lever) with normalized adapters, deduplication, and per-source failure tracking so misses are visible, not silent.
+            </li>
+            <li>
+              <strong class="text-white font-medium">Enricher</strong> — resolves the right contact at each company, running a provider waterfall (multiple data sources tried in priority order) with confidence scoring, so contacts are verified, not guessed. Hands off to the existing scoring spine.
+            </li>
+            <li>
+              <strong class="text-white font-medium">Synthesizer</strong> — drafts personalized outreach with an LLM, anchored on the specific signal. Sandboxed: it can only write drafts to a pending queue. It has no send capability whatsoever — every draft is held for quality review.
+            </li>
+            <li>
+              <strong class="text-white font-medium">QA + Dispatch</strong> <span class="text-sub text-xs">(in progress)</span> — a deterministic quality gate that approves or kills each draft, and a rate-limited dispatcher that only ever sends approved, gated copy.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Principle</div>
+          <p class="mb-4">Agents handle the judgment work; deterministic code handles everything else. The system knows where not to put an agent. Every handoff is a database row you can inspect. Any agent can die and restart with no lost state.</p>
+          <p>The one agent that uses an LLM is the one most able to go wrong — so it's the one most tightly caged. It can write. It cannot send.</p>
+        </div>
+
+        <div class="mb-12 md:mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>Full-motion automation — signal to ready-to-review draft with zero manual steps.</li>
+            <li>Data quality — percentage of contacts verified across two sources vs. single-source guesses.</li>
+            <li>Safety — zero un-reviewed copy can reach a send channel, by construction.</li>
+            <li>Throughput — signals processed per run, with full per-step auditability.</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-line pt-12 mb-8" data-reveal>
+          <p class="text-sub text-sm mb-4">Want autonomous outbound infrastructure?</p>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
+        </div>
+
+        <a href="case-studies.html" class="text-sub text-sm hover:text-accent transition-colors link-hover">← Case Studies</a>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="text-sub text-sm">Manny Antoine · 2026 · <a href="https://linkedin.com/in/manfreda" class="hover:text-accent transition-colors link-hover">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
