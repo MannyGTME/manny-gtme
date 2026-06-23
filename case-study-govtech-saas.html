@@ -28,24 +28,42 @@
       <div class="glass-card p-6 sm:p-8 md:p-12">
 
         <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>GovTech SaaS</p>
-        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+        <h1 class="font-display font-bold text-primary leading-tight mb-10 md:mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
           GovTech SaaS<br>Outbound
         </h1>
 
-        <div class="mb-14 space-y-4" data-reveal>
-          <p>I built an outbound system for a company selling sales intelligence software into the government tech space. The goal was simple: find the right accounts, score them, and write the outreach without a human doing research on every record.</p>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Problem</div>
+          <p>GovTech is a hyper-narrow market. The total addressable market is small. Bad data does not just cause a bounce. It burns a bridge with a prospect you cannot afford to lose. In this space, safety matters more than volume.</p>
+        </div>
 
-          <p>I pulled 50 companies and scored each one on four signals: funding stage, growth, public sector fit, and what sales tools they already ran. Each company got a score out of 15. The enrichment ran through a waterfall, so if one source came back empty it tried the next instead of just failing. 46 of the 50 decision-makers came back fully enriched.</p>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">This is a signal-based outbound system built for precision. I ran a pilot on 50 highly targeted companies.</p>
+          <ul class="list-disc list-outside ml-5 space-y-3">
+            <li><strong class="text-white font-medium">Enrichment:</strong> Scored and verified contact data across multiple sources.</li>
+            <li><strong class="text-white font-medium">Logic:</strong> Built dynamic email logic to personalize based on verified firmographics.</li>
+            <li><strong class="text-white font-medium">Safety Gate:</strong> Everything is gated. The system is structurally blocked from shipping if a critical data field is missing or unverified.</li>
+          </ul>
+        </div>
 
-          <p>The email writing was split into pieces. The opener pulled from the person, the body pulled from the company, the subject line was its own thing. I capped every email under 100 words because that's where reply rates hold up.</p>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Principle</div>
+          <p>When the market is small, you protect the list. Gated outbound means you never burn a high-value target on bad data.</p>
+        </div>
 
-          <p>The part I care most about is the guardrails. A status check stops the AI from running on a record with missing data, and a second check makes sure no half-built email reaches the sequencer. If the data is bad, the record gets held, not sent.</p>
-
-          <p>One thing that came out of the scoring: 80% of the top accounts were already running ZoomInfo or Salesforce. That told me they had budget for sales tooling and shaped how I would position against what they already used.</p>
+        <div class="mb-12 md:mb-16" data-reveal>
+          <div class="section-label">The Metrics</div>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li><strong class="text-white font-medium">Bounce rate:</strong> Driven to near zero by strict enrichment gating.</li>
+            <li><strong class="text-white font-medium">Personalization accuracy:</strong> Every email matches the company's specific GovTech profile.</li>
+            <li><strong class="text-white font-medium">Pipeline generated:</strong> High-value meetings secured without burning the TAM.</li>
+          </ul>
         </div>
 
         <div class="border-t border-line pt-12 mb-8" data-reveal>
-          <p class="text-sub text-sm mb-4">Want this built for your pipeline?</p>
+          <p class="text-sub text-sm mb-4">Want outbound built for a market you can't afford to burn?</p>
           <a href="contact.html" class="btn-primary">Let's talk →</a>
         </div>
 

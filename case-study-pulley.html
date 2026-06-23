@@ -24,64 +24,47 @@
   </nav>
 
   <div class="max-w-3xl mx-auto px-6 pt-20">
-    <main class="py-16 md:py-24">
-      <div class="glass-card p-8 md:p-12">
+    <main class="py-10 md:py-24">
+      <div class="glass-card p-6 sm:p-8 md:p-12">
 
         <p class="font-mono text-sub text-xs uppercase tracking-widest mb-3" data-reveal>Pulley</p>
-        <h1 class="font-display font-bold text-primary leading-tight mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
+        <h1 class="font-display font-bold text-primary leading-tight mb-10 md:mb-14" style="font-size: clamp(1.8rem, 5vw, 2.5rem);" data-reveal>
           Equity Management SaaS<br>Outbound
         </h1>
 
-        <div class="mb-14" data-reveal>
+        <div class="mb-10 md:mb-14" data-reveal>
           <div class="section-label">The Problem</div>
-          <p class="mb-4">Equity management platforms win deals at specific moments in a startup's lifecycle — usually around a funding event, when headcount is growing fast, or when cap table complexity starts outpacing a spreadsheet. Reaching a founder too early means the problem doesn't feel real yet. Too late means a competitor already has them locked in.</p>
-          <p>The challenge was building a targeting model that found startups at the exact right lifecycle stage, at volume, without requiring manual account research. The signal had to be specific enough to be actionable, and the outreach had to reference it clearly so the relevance was obvious.</p>
+          <p>Founders do not care about cap table software until their cap table becomes a headache. Pitching equity management before a funding round is useless. Pitching it a month after they close is too late. The window is tight.</p>
         </div>
 
-        <div class="mb-14" data-reveal>
-          <div class="section-label">The Workflow</div>
-          <ol class="list-decimal list-outside ml-5 space-y-3">
-            <li>Defined the target lifecycle window: startups that had closed a Seed or Series A in the last 90 days, with 10–50 employees, and no existing equity management platform detected in their tech stack.</li>
-            <li>Used Clay to pull funding event data, filtering on round type, close date, and headcount range. This produced the core trigger list.</li>
-            <li>Layered in a secondary signal: active hiring in Finance, Legal, or HR roles — an indicator that operational infrastructure is being built out, which is exactly when cap table tooling becomes urgent.</li>
-            <li>Scored each account across three dimensions: funding recency (decays weekly), headcount growth velocity, and hiring signal strength. Composite score determined send priority.</li>
-            <li>For each record, Clay passed the funding event details, hire data, and company context to a Claude prompt that selected the right opening hook and assembled the email.</li>
-            <li>High-priority accounts (top 20% by score) were routed directly into sequence. Mid-tier accounts triggered a slower follow-up cadence.</li>
-          </ol>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">This system targets startups at the exact moment they need the infrastructure.</p>
+          <ul class="list-disc list-outside ml-5 space-y-3 mb-8">
+            <li><strong class="text-white font-medium">Trigger 1:</strong> Funding events.</li>
+            <li><strong class="text-white font-medium">Trigger 2:</strong> Team growth velocity.</li>
+            <li><strong class="text-white font-medium">Trigger 3:</strong> Lifecycle stage transitions.</li>
+          </ul>
+          <p>When a company trips a wire, the system captures the event, enriches the founder's contact data, and drafts outreach anchored to that specific milestone.</p>
         </div>
 
-        <div class="mb-14" data-reveal>
-          <div class="section-label">The Copy</div>
-          <p class="text-sub text-sm mb-4">Example output — post-funding + headcount growth hook:</p>
-          <pre class="bg-surface font-mono text-sm px-5 py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: post-Series A → cap table usually hits a wall around now
-
-Hi [First Name],
-
-Congrats on the raise. You've added [X] people since close — that
-pace is exactly when a spreadsheet starts working against you.
-
-Pulley handles the 409A, option grants, and board reporting in one
-place. Founders at your stage say the 409A alone saves them two weeks
-per year.
-
-15 minutes to walk through it?
-
-[Signature]</code></pre>
+        <div class="mb-10 md:mb-14" data-reveal>
+          <div class="section-label">The Principle</div>
+          <p>Timing beats persuasion. In SaaS infrastructure, you win by showing up the week the pain starts.</p>
         </div>
 
-        <div class="mb-16" data-reveal>
+        <div class="mb-12 md:mb-16" data-reveal>
           <div class="section-label">The Metrics</div>
-          <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
           <ul class="list-disc list-outside ml-5 space-y-2">
-            <li>Timing window accuracy — what percentage of meetings booked came from accounts contacted within 60 days of their funding close?</li>
-            <li>Signal decay curve — how does reply rate change as funding recency increases from 30 to 90 to 180 days?</li>
-            <li>Hiring signal lift — does the secondary hire signal improve meeting rate vs. funding signal alone?</li>
-            <li>Lifecycle conversion — which combination of round size and headcount stage produces the highest close rate downstream?</li>
+            <li><strong class="text-white font-medium">Event capture latency:</strong> Time from public funding announcement to sequence enrollment.</li>
+            <li><strong class="text-white font-medium">Relevance score:</strong> Alignment of the message to the specific growth signal.</li>
+            <li><strong class="text-white font-medium">Meeting booked rate:</strong> Driven by catching founders in the active buying window.</li>
           </ul>
         </div>
 
         <div class="border-t border-line pt-12 mb-8" data-reveal>
-          <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
+          <p class="text-sub text-sm mb-4">Want to reach buyers the week their pain starts?</p>
           <a href="contact.html" class="btn-primary">Let's talk →</a>
         </div>
 

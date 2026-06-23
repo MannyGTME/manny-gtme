@@ -34,55 +34,37 @@
 
         <div class="mb-10 md:mb-14" data-reveal>
           <div class="section-label">The Problem</div>
-          <p class="mb-4">Marketing agencies at the 10–50 headcount stage tend to grow entirely on referrals and inbound. Outbound is something they know they need but haven't formalized — until the referral pipeline slows, a key client churns, or a new service line needs to prove itself. The problem isn't that they don't want pipeline. It's that they haven't built the capacity to generate it.</p>
-          <p>The challenge was identifying which agencies were at that exact inflection point — not just a matching firmographic profile, but showing observable signals that commercial capacity was actively being built. The target was marketing agencies that were hiring for growth functions, expanding headcount, or launching new service lines: the three indicators that reliably precede a structured outbound motion.</p>
+          <p>Selling to marketing agencies is noisy. Everyone pitches them lead generation. Spraying a list of agencies with cold email burns the domain. You have to reach them exactly when they are actively trying to solve a pipeline problem.</p>
         </div>
 
         <div class="mb-10 md:mb-14" data-reveal>
-          <div class="section-label">The Workflow</div>
-          <ol class="list-decimal list-outside ml-5 space-y-3">
-            <li>Built the core account universe in Clay — marketing agencies filtered by headcount range (8–50), service focus (performance, paid acquisition, demand gen, content), and geography. Starting list: ~600 accounts.</li>
-            <li>Defined three scoring signals: net new hires in the last 60 days across any function, open roles in Sales, Business Development, or Growth, and a leadership hire in a commercial or client-facing function within the last 90 days.</li>
-            <li>Enriched each record against LinkedIn for headcount velocity and hire data; pulled open role data from job board feeds via Clay. Scraped agency websites to identify current service lines and client verticals.</li>
-            <li>Built a composite score across three dimensions: headcount growth velocity (0–3), active role signal (0–2), and service-line fit with the offer (0–1). Agencies scoring 4 or above entered the active sequence. Scores of 2–3 went into a lower-priority watch cadence.</li>
-            <li>For each priority account, passed the top-scoring signal, agency context, and service-line data to Claude. The system selected the correct opening hook module and assembled a first touch referencing the specific signal — hire name, role title, or new service line — without manual lookup per record.</li>
-            <li>Output: a weekly rolling send list of 30–50 prioritized agencies, refreshed as new signals fired. No static list — accounts aged out as signals became stale and new ones replaced them.</li>
+          <div class="section-label">The Build</div>
+          <p class="mb-6">This is an automated outbound engine built to find and sequence agencies based on intent.</p>
+          <ol class="list-decimal list-outside ml-5 space-y-3 mb-8">
+            <li><strong class="text-white font-medium">Signal Ingestion:</strong> Tracks headcount growth and open SDR roles.</li>
+            <li><strong class="text-white font-medium">Filtering:</strong> Scores agencies on service-line fit and drops the ones outside the target parameters.</li>
+            <li><strong class="text-white font-medium">Execution:</strong> Triggers the sequence automatically.</li>
           </ol>
+          <p>There is zero manual research required per record.</p>
         </div>
 
         <div class="mb-10 md:mb-14" data-reveal>
-          <div class="section-label">The Copy</div>
-          <p class="text-sub text-sm mb-4">Example output — headcount growth + open BizDev role signal:</p>
-          <pre class="bg-surface font-mono text-xs sm:text-sm px-4 py-4 sm:px-5 sm:py-5 border-l-2 border-[#2a2a2a] overflow-x-auto leading-relaxed"><code>Subject: 3 new hires at [Agency] → quick question
-
-Hi [First Name],
-
-Noticed [Agency] has been building fast — and you have a BizDev role
-open right now. That combination usually means outbound is becoming
-part of the motion, not just referrals.
-
-Most agencies at your stage hit the same wall: how to run a structured
-pipeline without a full SDR headcount.
-
-Happy to show you how we handle that for agencies your size.
-15 minutes this week?
-
-[Signature]</code></pre>
+          <div class="section-label">The Principle</div>
+          <p>A hiring signal is a buying signal. If an agency is hiring SDRs, they need pipeline. The system reaches them at the exact moment they are investing in revenue capacity.</p>
         </div>
 
         <div class="mb-12 md:mb-16" data-reveal>
           <div class="section-label">The Metrics</div>
-          <p class="text-sub text-sm mb-4">What I'd measure if this were running at full scale:</p>
+          <p class="text-sub text-sm mb-4">What this is built to move:</p>
           <ul class="list-disc list-outside ml-5 space-y-2">
-            <li>Signal accuracy — what percentage of triggered accounts are actively building outbound capacity at time of contact?</li>
-            <li>Score-to-meeting rate — do agencies scoring 5–6 convert at meaningfully higher rates than those scoring 3–4?</li>
-            <li>Role-signal lift — does an open BizDev or Sales role improve meeting rate over headcount growth alone?</li>
-            <li>Signal recency decay — how does reply rate change as the triggering signal ages from 0–2 weeks to 4–8 weeks?</li>
+            <li><strong class="text-white font-medium">Research hours saved:</strong> Manual list building replaced by automated signal tracking.</li>
+            <li><strong class="text-white font-medium">Signal accuracy:</strong> Percentage of sequenced agencies actively hiring GTM roles.</li>
+            <li><strong class="text-white font-medium">Positive reply rate:</strong> Driven by timing, not just copy.</li>
           </ul>
         </div>
 
         <div class="border-t border-line pt-12 mb-8" data-reveal>
-          <p class="text-sub text-sm mb-4">Want this system for your pipeline?</p>
+          <p class="text-sub text-sm mb-4">Want an outbound engine that runs on intent?</p>
           <a href="contact.html" class="btn-primary">Let's talk →</a>
         </div>
 
