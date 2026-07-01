@@ -64,6 +64,13 @@
               <strong class="text-white font-medium">Dispatcher:</strong> A rate-limited, idempotent sender with a kill switch that defaults to off. It releases only approved drafts, and a double-send is structurally impossible. Nothing leaves the system without passing every gate before it.
             </li>
           </ul>
+
+          <figure class="mt-8" data-reveal>
+            <a href="https://deployment-os-spine.vercel.app/" target="_blank" rel="noopener" class="block group">
+              <img src="OutboundOS.png" alt="Outbound OS live pipeline dashboard showing Sourced, Enriched, Drafted, QA, Approved, and Exported stages" class="w-full rounded-lg border border-line group-hover:border-accent transition-colors">
+            </a>
+            <figcaption class="text-sub text-xs mt-2 leading-relaxed">Outbound OS runs on the Deployment OS spine. The live pipeline view, with each stage mapping to an agent: Sourced (Scout), Enriched (Enricher), Drafted (Synthesizer), QA (Gatekeeper), Approved and Exported (Dispatcher). <a href="https://deployment-os-spine.vercel.app/" target="_blank" rel="noopener" class="text-accent link-hover">View the live dashboard →</a></figcaption>
+          </figure>
         </div>
 
         <div class="mb-10 md:mb-14" data-reveal>
@@ -76,10 +83,10 @@
           <div class="section-label">The Metrics</div>
           <p class="text-sub text-sm mb-4">What this is built to move:</p>
           <ul class="list-disc list-outside ml-5 space-y-2">
-            <li>Full-motion automation — signal to ready-to-review draft with zero manual steps.</li>
-            <li>Data quality — percentage of contacts verified across two sources vs. single-source guesses.</li>
-            <li>Safety — zero un-reviewed copy can reach a send channel, by construction.</li>
-            <li>Throughput — signals processed per run, with full per-step auditability.</li>
+            <li><strong class="text-white font-medium">Full-motion automation:</strong> Signal to ready-to-review draft with zero manual steps.</li>
+            <li><strong class="text-white font-medium">Data quality:</strong> Percentage of contacts verified across two sources versus single-source guesses.</li>
+            <li><strong class="text-white font-medium">Safety:</strong> Zero un-reviewed copy can reach a send channel, by construction.</li>
+            <li><strong class="text-white font-medium">Throughput:</strong> Signals processed per run, with full per-step auditability.</li>
           </ul>
         </div>
 
